@@ -1,14 +1,199 @@
-
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
-
 // Variables
 @import "variables";
-
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+@font-face {
+  font-family: 'Product Sans';
+  font-style: normal;
+  src: url("../fonts/product-sans.otf");
+}
+:focus {
+  outline: none;
+}
+
+::-moz-focus-inner {
+  border: 0;
+}
+
+html {
+  height: 100% !important;
+  background-color: #1d2124;
+  margin: 0 auto;
+  padding: 0 auto;
+}
+
+#app {
+  background-color: #1d2124;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: center;
+  align-content: center;
+
+  .welcome-box {
+    padding: 0 1.2em;
+  }
+  .welcome-title {
+    margin: 10px;
+    color: white;
+    font-family: "Product Sans", serif;
+    font-size: 5em;
+    text-align: center;
+  }
+  .welcome-hr {
+    height: 3px;
+    border: none;
+    background-color: white;
+  }
+
+  .welcome-subtitle {
+    color: #20c997;
+    font-family: "Product Sans", serif;
+    font-size: 2em;
+    text-align: center;
+  }
+
+  .login-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: stretch;
+    align-items: stretch;
+    margin: 1vw;
+    margin-bottom: 4vw !important;
+    padding: 1em;
+    //min-width: 20%;
+    max-width: 90%;
+    background-color: #35393c;
+    border-radius: 1em;
+    box-shadow: 5px 5px 2px #000;
+
+    .login-row {
+      order: 0;
+      flex: 0 1 auto;
+      align-self: auto;
+
+      &#title {
+        font-size: 3em;
+        color: white;
+        font-family: "Product Sans", serif;
+        text-align: center;
+      }
+
+      &#form-wrapper {
+        margin: 1.5em 0;
+        height: 60%;
+
+        #login-form {
+          display: flex;
+          flex-direction: column;
+          flex-wrap: nowrap;
+          justify-content: space-around;
+          align-content: stretch;
+          align-items: stretch;
+
+          .login-input-label {
+            color: white;
+            font-weight: bold;
+            font-family: "Product Sans", serif;
+            font-size: 1.5em;
+            &:first-of-type {
+              order: 1;
+            }
+
+            &:nth-of-type(2) {
+              order: 3;
+            }
+          }
+          .login-input {
+            background-color: unset;
+            border: none;
+            border-bottom: solid 3px white;
+            color: white;
+            font-size: 1.5em;
+            margin-bottom: 1em;
+
+            &#email {
+              order: 2;
+            }
+
+            &#password {
+              order: 4;
+              margin-bottom: 0.2em;
+            }
+            &:focus {
+              color: #20c997;
+              border-bottom-color: #20c997;
+              + label {
+                color: #20c997;
+              }
+            }
+
+            &.has-error {
+              color: red;
+              border-bottom-color: red;
+              + label {
+                color: red !important;
+              }
+            }
+
+            &:invalid {
+              color: white;
+              border-bottom-color: white;
+            }
+          }
+
+          .login-submit {
+            order: 6;
+            background-color: #20c997;
+            border-radius: 1em;
+            color: #212529;
+            font-size: 2em;
+            font-family: "Product Sans", serif;
+            border: none;
+            font-weight: 900;
+            box-shadow: 5px 2px #147658;
+
+            &:hover {
+              color: white;
+              cursor: pointer;
+              box-shadow: 5px 2px #147658;
+            }
+
+            &:active {
+              color: #147658;
+              box-shadow: 5px 2px white;
+            }
+          }
+
+          #remember {
+            padding: 0.5em 0;
+            order: 5;
+            background: none;
+            border: none;
+            font-size: 1.5em;
+            color: transparent;
+            text-shadow: 0 0 0 red;
+            user-select: none;
+            user-input: none;
+            user-focus: none;
+            &:hover {
+              cursor: pointer;
+            }
+
+            &.remember-me {
+              text-shadow: 0 0 0 green;
+            }
+
+          }
+
+        }
+      }
+    }
+  }
 }
